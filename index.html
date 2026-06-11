@@ -4,52 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>saplynx | home</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono&display=swap');
+        :root {
+            --bg-base: #030303;
+            --bg-surface: #0a0a0a;
+            --text-primary: #f8fafc;
+            --text-secondary: #8b949e;
+            --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+            --wa-color: #25D366;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.04) 0%, transparent 60%);
+        }
+        nav { width: 100%; padding: 2rem 1rem; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
+        .pill-menu { display: flex; align-items: center; justify-content: center; gap: 2.5rem; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 100px; padding: 0.75rem 3rem; }
+        .pill-menu a { text-decoration: none; color: var(--text-secondary); font-family: 'Space Mono', monospace; font-size: 0.85rem; transition: all 0.3s; text-transform: lowercase; }
+        .pill-menu a:hover, .pill-menu a.active { color: var(--text-primary); text-shadow: 0 0 8px rgba(255,255,255,0.4); }
+        .pill-menu .logo { font-size: 1.4rem; font-weight: 600; color: #fff; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.05em; }
+        .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        main { flex: 1; width: 100%; max-width: 1100px; padding: 4rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
+        .hero { padding: 4rem 1rem; max-width: 750px; text-align: center; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 600; letter-spacing: -0.03em; text-transform: lowercase; }
+        .hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 580px; margin: 0 auto; font-weight: 300; text-transform: lowercase; }
+        .mono { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; color: var(--text-secondary); text-transform: lowercase; margin-bottom: 1rem; display: block; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; margin-top: 4rem; }
+        .glass-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; padding: 3rem 2rem; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .glass-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-2px); box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.1); }
+        .glass-card h3 { font-size: 1.25rem; margin: 1.2rem 0 0.75rem 0; font-weight: 500; text-transform: lowercase; }
+        .glass-card p { color: var(--text-secondary); font-size: 0.9rem; font-weight: 300; line-height: 1.6; text-transform: lowercase; }
+        .btn { display: inline-flex; align-items: center; padding: 0.85rem 2.5rem; border-radius: 100px; font-family: 'Space Mono', monospace; font-size: 0.85rem; text-decoration: none; transition: all 0.3s; margin-top: 2.5rem; text-transform: lowercase; font-weight: 600; border: 1px solid transparent; }
+        .btn-glow { background: var(--text-primary); color: var(--bg-base); }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(255,255,255,0.25); }
+        footer { width: 100%; padding: 4rem 1rem; border-top: 1px solid var(--border); text-align: center; margin-top: auto; }
+        @media (max-width: 850px) {
+            .grid-3 { grid-template-columns: 1fr; }
+            .pill-menu { flex-wrap: wrap; padding: 1rem; border-radius: 20px; gap: 1rem; }
+            .pill-menu .logo { width: 100%; order: -1; text-align: center; margin-bottom: 0.2rem; }
+        }
+    </style>
 </head>
 <body>
     <nav>
         <div class="pill-menu">
-            <a href="services.html" >services</a>
-            <a href="about.html" >about</a>
+            <a href="services.html">services</a>
+            <a href="about.html">about</a>
             <a href="index.html" class="logo gradient-text">saplynx</a>
-            <a href="policies.html" >policies</a>
-            <a href="contact.html" >contact</a>
+            <a href="policies.html">policies</a>
+            <a href="contact.html">contact</a>
         </div>
     </nav>
     <main>
-        
-    <div class="hero">
-        <span class="mono gradient-text" style="margin-bottom: 1rem;">// system online</span>
-        <h1>architecting digital realities.</h1>
-        <p>we engineer robust ecosystems, from deep embedded logic to high-level interactive environments.</p>
-        <div style="display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
-            <a href="services.html" class="btn btn-glow">initialize services</a>
+        <div class="hero">
+            <span class="mono gradient-text">// system active</span>
+            <h1>architecting digital realities.</h1>
+            <p>we engineer robust ecosystems, bridging deep embedded logic with high-level interactive environments.</p>
+            <a href="services.html" class="btn btn-glow">initialize protocols</a>
         </div>
-    </div>
-
-    <div class="grid-3">
-        <div class="glass-card">
-            <span class="mono gradient-text">01.</span>
-            <h3>interactive logic</h3>
-            <p>certified expertise in unity and interactive engines. we build optimized, scalable spatial environments.</p>
+        <div class="grid-3">
+            <div class="glass-card">
+                <span class="mono gradient-text">01 //</span>
+                <h3>interactive logic</h3>
+                <p>certified expertise in modern development engines. we build optimized, scalable spatial environments and interactive software pipelines.</p>
+            </div>
+            <div class="glass-card">
+                <span class="mono gradient-text">02 //</span>
+                <h3>embedded hardware</h3>
+                <p>firmware architecture engineered directly onto silicon networks, specializing in esp32, stm32, and custom hardware prototyping arrays.</p>
+            </div>
+            <div class="glass-card">
+                <span class="mono gradient-text">03 //</span>
+                <h3>pure consulting</h3>
+                <p>de-risking complex integration challenges with clear system blueprints, technical roadmaps, and data architecture strategy.</p>
+            </div>
         </div>
-        <div class="glass-card">
-            <span class="mono gradient-text">02.</span>
-            <h3>embedded cores</h3>
-            <p>bridging silicon and software. deep implementations across esp32, stm32, and custom iot firmware.</p>
-        </div>
-        <div class="glass-card">
-            <span class="mono gradient-text">03.</span>
-            <h3>pure architecture</h3>
-            <p>system design without the bloat. technical roadmaps and strategic consulting for complex stacks.</p>
-        </div>
-    </div>
-
     </main>
     <footer>
-        <div class="mono">
-            <p>01001011 &copy; 2026 saplynx. all nodes secured.</p>
-        </div>
+        <span class="mono">01001011 &copy; 2026 saplynx. all nodes synchronized.</span>
     </footer>
 </body>
 </html>

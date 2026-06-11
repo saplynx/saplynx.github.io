@@ -4,74 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>saplynx | policies</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono&display=swap');
+        :root { --bg-base: #030303; --bg-surface: #0a0a0a; --text-primary: #f8fafc; --text-secondary: #8b949e; --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%); --border: rgba(255, 255, 255, 0.08); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg-base); color: var(--text-primary); min-height: 100vh; display: flex; flex-direction: column; align-items: center; background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.04) 0%, transparent 60%); }
+        nav { width: 100%; padding: 2rem 1rem; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
+        .pill-menu { display: flex; align-items: center; justify-content: center; gap: 2.5rem; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 100px; padding: 0.75rem 3rem; }
+        .pill-menu a { text-decoration: none; color: var(--text-secondary); font-family: 'Space Mono', monospace; font-size: 0.85rem; transition: all 0.3s; text-transform: lowercase; }
+        .pill-menu a:hover, .pill-menu a.active { color: var(--text-primary); text-shadow: 0 0 8px rgba(255,255,255,0.4); }
+        .pill-menu .logo { font-size: 1.4rem; font-weight: 600; color: #fff; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.05em; }
+        .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        main { flex: 1; width: 100%; max-width: 1100px; padding: 4rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
+        .hero { padding: 4rem 1rem; max-width: 750px; text-align: center; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 600; letter-spacing: -0.03em; text-transform: lowercase; }
+        .hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 580px; margin: 0 auto; font-weight: 300; text-transform: lowercase; }
+        .mono { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; color: var(--text-secondary); text-transform: lowercase; margin-bottom: 1rem; display: block; }
+        .policy-stack { width: 100%; max-width: 800px; display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; text-align: left; }
+        .policy-box { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+        .policy-box h3 { font-size: 1.15rem; margin-bottom: 1rem; color: var(--text-primary); text-transform: lowercase; font-family: 'Space Mono', monospace; }
+        .policy-box ul { list-style: none; }
+        .policy-box li { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.6rem; font-weight: 300; text-transform: lowercase; line-height: 1.6; }
+        .policy-box strong { color: var(--text-primary); font-weight: 500; }
+        footer { width: 100%; padding: 4rem 1rem; border-top: 1px solid var(--border); text-align: center; margin-top: auto; }
+        @media (max-width: 850px) { .pill-menu { flex-wrap: wrap; padding: 1rem; border-radius: 20px; gap: 1rem; } .pill-menu .logo { width: 100%; order: -1; text-align: center; margin-bottom: 0.2rem; } }
+    </style>
 </head>
 <body>
     <nav>
         <div class="pill-menu">
-            <a href="services.html" >services</a>
-            <a href="about.html" >about</a>
+            <a href="services.html">services</a>
+            <a href="about.html">about</a>
             <a href="index.html" class="logo gradient-text">saplynx</a>
             <a href="policies.html" class="active">policies</a>
-            <a href="contact.html" >contact</a>
+            <a href="contact.html">contact</a>
         </div>
     </nav>
     <main>
-        
-    <div class="hero">
-        <span class="mono gradient-text" style="margin-bottom: 1rem;">// compliance protocols</span>
-        <h1>operational policies</h1>
-        <p>transparent terms of service, aligned with global payment compliance.</p>
-    </div>
-
-    <div class="policy-container">
-        <div class="policy-block">
-            <span class="mono gradient-text">layer 01</span>
-            <h3>payment vectors & currency</h3>
-            <ul>
-                <li><strong>transaction currency:</strong> all transactions and invoices are processed in <strong>indian rupees (inr)</strong>.</li>
-                <li><strong>milestone logic:</strong> software consulting is billed via milestones. an advance payment initiates development; the balance is tied to verifiable deliverables.</li>
-            </ul>
+        <div class="hero">
+            <span class="mono gradient-text">// payment verification protocols</span>
+            <h1>operational policies</h1>
+            <p>clear, transparent framework documentation aligned with compliance guidelines.</p>
         </div>
-        <div class="policy-block">
-            <span class="mono gradient-text">layer 02</span>
-            <h3>replacement protocols</h3>
-            <ul>
-                <li><strong>refunds:</strong> due to the highly custom nature of code and architecture, we do not offer direct refunds for approved and completed milestones.</li>
-                <li><strong>replacements:</strong> if a delivered build or embedded prototype fails documented specifications, we provide necessary code revisions at no cost during the user acceptance testing (uat) window.</li>
-            </ul>
+        <div class="policy-stack">
+            <div class="policy-box">
+                <h3>[layer_01] payment terms & currency</h3>
+                <ul>
+                    <li>- <strong>transaction currency:</strong> all standard development estimates, software consulting quotes, and payment invoices are calculated and executed in <strong>indian rupees (inr)</strong>.</li>
+                    <li>- <strong>milestone schedules:</strong> development sprints are managed on discrete project phases. an initial advance payment initializes engineering blocks; remaining fees are tied explicitly to deliverable confirmations.</li>
+                </ul>
+            </div>
+            <div class="policy-box">
+                <h3>[layer_02] code adjustments & replacements</h3>
+                <ul>
+                    <li>- <strong>refund rules:</strong> due to the highly custom, tailored nature of proprietary engineering architectures and consultation models, we do not issue direct cash refunds for verified and finished milestones.</li>
+                    <li>- <strong>replacements:</strong> if an interactive framework or firmware compilation deviates from the initial scoped constraints, we deploy immediate, cost-free engineering revisions during the designated verification window.</li>
+                </ul>
+            </div>
+            <div class="policy-box">
+                <h3>[layer_03] project termination contracts</h3>
+                <ul>
+                    <li>- <strong>cancellation:</strong> users retain absolute autonomy to stop development vectors at any point. upon formal cancellation request, all finalized codebases are compiled and transmitted to the client.</li>
+                    <li>- <strong>pro-rata execution:</strong> any advances remaining for unstarted development blocks will be systematically returned to the source payment array within 7-10 standard processing days.</li>
+                </ul>
+            </div>
+            <div class="policy-box">
+                <h3>[layer_04] data sovereignty arrays</h3>
+                <ul>
+                    <li>- <strong>privacy terms:</strong> we collect only critical identifier strings (client name, verified email relays, secure communication lines) strictly required to maintain development loops and financial compliance records.</li>
+                    <li>- <strong>security protocols:</strong> we never trade or leak database logs to external advertising channels. structural source files, schematic wireframes, and database maps are kept fully confidential.</li>
+                </ul>
+            </div>
+            <div class="policy-box">
+                <h3>[layer_05] industry legal boundaries</h3>
+                <ul>
+                    <li>- <strong>export compliance:</strong> saplynx operates strictly within local legal guidelines. we do not build software or firmware vectors servicing restricted industries (e.g., alcohol, healthcare frameworks, unvetted speculative finance).</li>
+                    <li>- <strong>deployment liability:</strong> integration partners assume full legal ownership to ensure final deployed applications align with regional regulatory standards.</li>
+                </ul>
+            </div>
         </div>
-        <div class="policy-block">
-            <span class="mono gradient-text">layer 03</span>
-            <h3>termination states</h3>
-            <ul>
-                <li><strong>cancellation:</strong> clients may terminate ongoing services anytime. completed work is immediately handed over.</li>
-                <li><strong>pro-rata refunds:</strong> advance payments covering uncompleted future milestones will be refunded on a pro-rata basis within 7-10 business days.</li>
-            </ul>
-        </div>
-        <div class="policy-block">
-            <span class="mono gradient-text">layer 04</span>
-            <h3>data sovereignty</h3>
-            <ul>
-                <li><strong>privacy:</strong> we collect only essential client nodes (name, email, secure comms, project specs) for billing and execution.</li>
-                <li><strong>confidentiality:</strong> we do not sell or route your data to third-party networks. proprietary source code and hardware schematics remain strictly confidential.</li>
-            </ul>
-        </div>
-        <div class="policy-block">
-            <span class="mono gradient-text">layer 05</span>
-            <h3>regulatory alignment</h3>
-            <ul>
-                <li><strong>export & legality:</strong> saplynx complies with local software distribution laws. we do not facilitate restricted goods (e.g., alcohol, healthcare, finance).</li>
-                <li><strong>client responsibility:</strong> clients ensure their final deployed infrastructure complies with target industry regulations.</li>
-            </ul>
-        </div>
-    </div>
-
     </main>
     <footer>
-        <div class="mono">
-            <p>01001011 &copy; 2026 saplynx. all nodes secured.</p>
-        </div>
+        <span class="mono">01001011 &copy; 2026 saplynx. all nodes synchronized.</span>
     </footer>
 </body>
 </html>

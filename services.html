@@ -4,49 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>saplynx | services</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Exact same styling structure to keep execution symmetric */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono&display=swap');
+        :root { --bg-base: #030303; --bg-surface: #0a0a0a; --text-primary: #f8fafc; --text-secondary: #8b949e; --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%); --wa-color: #25D366; --border: rgba(255, 255, 255, 0.08); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg-base); color: var(--text-primary); min-height: 100vh; display: flex; flex-direction: column; align-items: center; background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.04) 0%, transparent 60%); }
+        nav { width: 100%; padding: 2rem 1rem; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
+        .pill-menu { display: flex; align-items: center; justify-content: center; gap: 2.5rem; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 100px; padding: 0.75rem 3rem; }
+        .pill-menu a { text-decoration: none; color: var(--text-secondary); font-family: 'Space Mono', monospace; font-size: 0.85rem; transition: all 0.3s; text-transform: lowercase; }
+        .pill-menu a:hover, .pill-menu a.active { color: var(--text-primary); text-shadow: 0 0 8px rgba(255,255,255,0.4); }
+        .pill-menu .logo { font-size: 1.4rem; font-weight: 600; color: #fff; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.05em; }
+        .gradient-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        main { flex: 1; width: 100%; max-width: 1100px; padding: 4rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
+        .hero { padding: 4rem 1rem; max-width: 750px; text-align: center; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 600; letter-spacing: -0.03em; text-transform: lowercase; }
+        .hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 580px; margin: 0 auto; font-weight: 300; text-transform: lowercase; }
+        .mono { font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; color: var(--text-secondary); text-transform: lowercase; margin-bottom: 1rem; display: block; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; margin-top: 4rem; }
+        .glass-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 16px; padding: 3rem 2rem; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .glass-card h3 { font-size: 1.25rem; margin: 1.2rem 0 0.75rem 0; font-weight: 500; text-transform: lowercase; }
+        .glass-card p { color: var(--text-secondary); font-size: 0.9rem; font-weight: 300; line-height: 1.6; text-transform: lowercase; }
+        footer { width: 100%; padding: 4rem 1rem; border-top: 1px solid var(--border); text-align: center; margin-top: auto; }
+        @media (max-width: 850px) { .grid-3 { grid-template-columns: 1fr; } .pill-menu { flex-wrap: wrap; padding: 1rem; border-radius: 20px; gap: 1rem; } .pill-menu .logo { width: 100%; order: -1; text-align: center; margin-bottom: 0.2rem; } }
+    </style>
 </head>
 <body>
     <nav>
         <div class="pill-menu">
             <a href="services.html" class="active">services</a>
-            <a href="about.html" >about</a>
+            <a href="about.html">about</a>
             <a href="index.html" class="logo gradient-text">saplynx</a>
-            <a href="policies.html" >policies</a>
-            <a href="contact.html" >contact</a>
+            <a href="policies.html">policies</a>
+            <a href="contact.html">contact</a>
         </div>
     </nav>
     <main>
-        
-    <div class="hero">
-        <span class="mono gradient-text" style="margin-bottom: 1rem;">// protocol capabilities</span>
-        <h1>core services</h1>
-        <p>end-to-end development vectors.</p>
-    </div>
-
-    <div class="grid-3">
-        <div class="glass-card">
-            <span class="mono gradient-text">module a</span>
-            <h3>interactive environments</h3>
-            <p>leveraging certified expertise in the unity engine, we construct optimized, high-performance interactive experiences. gamified enterprise solutions, simulation tools, and robust mechanics.</p>
+        <div class="hero">
+            <span class="mono gradient-text">// engineering capabilities</span>
+            <h1>development services</h1>
+            <p>technical consulting and custom deployments engineered for high-performance vectors.</p>
         </div>
-        <div class="glass-card">
-            <span class="mono gradient-text">module b</span>
-            <h3>iot & embedded systems</h3>
-            <p>engineering custom firmware and rapid hardware prototypes. heavy focus on adaptable esp32, esp8266, and stm32 microcontrollers for seamless low-level device control.</p>
+        <div class="grid-3">
+            <div class="glass-card">
+                <span class="mono gradient-text">vector_alpha</span>
+                <h3>interactive engineering</h3>
+                <p>utilizing verified expertise in the unity engine, we script optimized, high-performance interactive tools. we build simulation frameworks and interactive applications backed by clean design patterns.</p>
+            </div>
+            <div class="glass-card">
+                <span class="mono gradient-text">vector_beta</span>
+                <h3>firmware & microchips</h3>
+                <p>writing scalable firmware layers directly on low-power architectures. we specialize heavily in implementing logic across esp32, esp8266, and stm32 microcontrollers for secure edge execution.</p>
+            </div>
+            <div class="glass-card">
+                <span class="mono gradient-text">vector_gamma</span>
+                <h3>system consulting</h3>
+                <p>structuring architecture pipelines, project roadmaps, and system integration strategies. we systematically dismantle engineering blockers to build robust software pipelines.</p>
+            </div>
         </div>
-        <div class="glass-card">
-            <span class="mono gradient-text">module c</span>
-            <h3>systems architecture</h3>
-            <p>project roadmapping, system architecture design, and technical feasibility assessments. we map your business logic to scalable, decentralized or centralized infrastructure.</p>
-        </div>
-    </div>
-
     </main>
     <footer>
-        <div class="mono">
-            <p>01001011 &copy; 2026 saplynx. all nodes secured.</p>
-        </div>
+        <span class="mono">01001011 &copy; 2026 saplynx. all nodes synchronized.</span>
     </footer>
 </body>
 </html>
